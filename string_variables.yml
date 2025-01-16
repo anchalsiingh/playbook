@@ -20,6 +20,6 @@
             state: directory
       - name: creating index.html page inside "{{ apache_root }}"
         copy:
-               content: "Welcome in aman classes"
-                dest: "{{ apache_root }}/index.html"                      
----              
+          content: "Welcome in aman classes"
+          dest: "{{ apache_root }}/index.html"                      
+...              

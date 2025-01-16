@@ -1,0 +1,18 @@
+---
+- name: example of listing type playbook variables.
+  hosts: web
+  become: yes
+  tasks: 
+   - name: create new users
+     user:
+      name: '{{ item.name }}'
+      uid: '{{ item.uid }}'
+      state: present
+     loop:
+      - name: vikasha
+        uid: 1024
+      - name: amita
+        uid: 1035
+      - name: gret
+        uid: 1043    
+             

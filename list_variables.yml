@@ -1,0 +1,15 @@
+---
+- name: example of listing type playbook variables
+  hosts: web
+  become: true
+  vars:
+    mypkgs:
+      - ftp
+      - vaftpd
+      - zsh
+    tasks:
+      - name: installing the packages
+        yum:
+          name: "{{ mypkgs }}"
+          state: installed
+...            

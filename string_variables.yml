@@ -1,0 +1,25 @@
+---
+- name: example of string type playbook variables
+  hosts: web
+  vars:
+     apache: httpd
+     apache_root: /var/www/html
+  tasks:
+      - name: installing apache httpd server
+        yum:
+          name: "{{ apache }}"
+          state: installed
+      - name: starting & ending the services
+        service:
+               name: "{{ apache }}"
+               state: started
+               enabled: true
+      - name: creating "{{ apache_root }}"
+        file:
+            path: "{{ apache_root }}"
+            state: directory
+      - name: creating index.html page inside "{{ apache_root }}"
+        copy:
+               content: "Welcome in aman classes"
+                dest: "{{ apache_root }}/index.html"                      
+---              

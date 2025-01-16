@@ -1,0 +1,8 @@
+---
+- name: hello world printing playbook
+  hosts: all
+  become: true
+  tasks:
+    - name: printing hello world
+      debug:
+        msg: hello ansible world

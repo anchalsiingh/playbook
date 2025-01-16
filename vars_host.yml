@@ -1,0 +1,7 @@
+---
+- name: variable example
+  hosts: web
+  tasks:
+   - name: just show variable value
+     debug:
+       msg: "{{ hostvars }}"

@@ -1,0 +1,12 @@
+---
+- name: variable example
+  hosts: web
+  vars:
+    httpd_port: 80  
+  tasks:
+   - name: just show variable value
+     debug:
+       msg: "{{ httpd_port }}"
+   - name: just show variable value
+     debug:
+      msg: "tomcat is going to run on {{ httpd_port }}"
